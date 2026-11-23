@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minute 45 • 60 Minutes of Love</title>
+  <title>Minute 45 • Arwa's Birthday • From Saad</title>
   <link rel="stylesheet" href="../assets/css/theme.css">
   <link rel="stylesheet" href="../assets/css/minute.css">
 </head>
@@ -16,7 +16,7 @@
       </a>
       <div class="minute-tracker-badge">
         <span>Minute 45</span>
-        <span style="color: var(--text-light); font-size: 14px; font-weight: normal;">/ 60</span>
+        <span style="color: var(--text-light); font-size: 14px; font-weight: normal;">/ 60 • Arwa's Birthday</span>
       </div>
       <div class="quick-nav-arrows">
         <a href="../Minute 44/index.html" class="arrow-nav-btn " title="Previous Minute">‹</a>
@@ -27,10 +27,10 @@
     <!-- LOCKED VAULT SCREEN: Displayed when current time < unlock time -->
     <main class="glass-card locked-vault-card" id="vault-locked-screen">
       <div class="vault-lock-icon">🔒❤️</div>
-      <div class="vault-badge">Minute 45 is Waiting for its Moment</div>
-      <h1 class="vault-title font-serif">A Special Memory Awaits</h1>
+      <div class="vault-badge">For My Love Arwa Rao, From Saad</div>
+      <h1 class="vault-title font-serif">A Special Memory for Arwa</h1>
       <p class="vault-desc">
-        This romantic photograph and message are scheduled to reveal at <strong>11:44 PM</strong> during the countdown.
+        This romantic photograph and message from Saad will automatically reveal at <strong>11:44 PM</strong>.
       </p>
 
       <div class="vault-timer-box">
@@ -38,7 +38,7 @@
         <div class="vault-timer-digits font-serif" id="vault-countdown-text">--:--:--</div>
       </div>
 
-      <p class="vault-subtext">“Patience my love, the sweetest moments are worth waiting for...”</p>
+      <p class="vault-subtext">“Patience my love Arwa, every second brings us closer to your birthday...”</p>
       
       <div style="margin-top: 30px;">
         <a href="../index.html" class="nav-link-btn primary">
@@ -51,7 +51,7 @@
     <main class="glass-card showcase-card" id="unlocked-content" style="display: none;">
       <div class="minute-badge-row">
         <span class="time-badge">11:44 PM • 16 Min to Midnight</span>
-        <span class="rose-badge">Cherished Memory #45</span>
+        <span class="rose-badge">For My Love Arwa Rao 💖</span>
       </div>
 
       <h1 class="minute-main-heading gradient-title">Minute 45</h1>
@@ -65,7 +65,7 @@
           <span class="frame-corner br">❦</span>
           <div class="photo-inner-wrapper">
             
-        <img class="showcase-media" src="photo.jpg" alt="Minute 45 Memory" onerror="this.src='../assets/images/minute_45.jpg';">
+        <img class="showcase-media" src="photo.jpg" alt="Minute 45 Memory for Arwa Rao" onerror="this.src='../assets/images/minute_45.jpg';">
     
           </div>
         </div>
@@ -75,7 +75,7 @@
       <div class="love-message-box">
         <div class="quote-icon">“</div>
         <p class="love-message-text font-serif">In your presence, my heart is completely at rest. You are the melody that plays softly in my mind all day.</p>
-        <div class="love-message-author">— Forever Yours ❤️</div>
+        <div class="love-message-author">— For my love Arwa Rao, from Saad ❤️</div>
       </div>
 
       <!-- Interactive Reaction Bar -->
@@ -141,7 +141,6 @@
         unlockedContent.style.display = 'none';
         bottomNav.style.display = 'none';
 
-        // Update live countdown to this minute
         const msLeft = window.unlockEngine.getMsUntilMinute(45);
         const cd = window.unlockEngine.formatCountdown(msLeft);
         if (parseInt(cd.days) > 0) {
@@ -151,7 +150,6 @@
         }
       }
 
-      // Check next button
       if (45 < 60) {
         const nextBtn = document.getElementById('next-minute-btn');
         const nextArrow = document.getElementById('next-arrow');
