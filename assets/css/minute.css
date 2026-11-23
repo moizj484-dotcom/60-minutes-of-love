@@ -1,0 +1,479 @@
+/* 60 Minutes of Love - Individual Minute Website Styling */
+
+.minute-page-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Minute Header Bar */
+.minute-nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 28px;
+  margin-bottom: 30px;
+  border-radius: 50px;
+}
+
+.back-to-hub-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--rose-gold-deep);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--rose-gold-light);
+  transition: all 0.25s ease;
+}
+
+.back-to-hub-btn:hover {
+  background: #ffffff;
+  color: var(--accent-red);
+  transform: translateX(-3px);
+  box-shadow: 0 4px 15px rgba(183, 110, 121, 0.2);
+}
+
+.minute-tracker-badge {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quick-nav-arrows {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arrow-nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--rose-gold-light);
+  color: var(--rose-gold-deep);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.arrow-nav-btn:hover:not(.disabled) {
+  background: var(--rose-gold-gradient);
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.arrow-nav-btn.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Main Minute Showcase Card */
+.showcase-card {
+  padding: 45px 40px 50px;
+  margin-bottom: 35px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.showcase-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #ffd1dc 0%, #c58988 50%, #d90429 100%);
+}
+
+.minute-badge-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.time-badge {
+  background: var(--blush-100);
+  border: 1px solid var(--rose-gold-light);
+  color: var(--rose-gold-dark);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 30px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.minute-main-heading {
+  font-size: 46px;
+  color: var(--text-main);
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+/* Luxury Romantic Photo Frame */
+.photo-frame-container {
+  max-width: 620px;
+  margin: 0 auto 36px;
+  position: relative;
+}
+
+.photo-frame {
+  background: #ffffff;
+  padding: 14px;
+  border-radius: 28px;
+  box-shadow: 0 20px 45px rgba(183, 110, 121, 0.22), 0 4px 15px rgba(0, 0, 0, 0.04);
+  border: 2px solid rgba(197, 137, 136, 0.35);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.photo-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 55px rgba(183, 110, 121, 0.3);
+}
+
+.photo-inner-wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: #fdf6f3;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showcase-media {
+  width: 100%;
+  max-height: 540px;
+  object-fit: contain;
+  display: block;
+  border-radius: 18px;
+}
+
+video.showcase-media {
+  background: #000;
+  border-radius: 18px;
+}
+
+/* Heart Corner Accents */
+.frame-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  color: var(--rose-gold);
+  font-size: 18px;
+  z-index: 5;
+  pointer-events: none;
+}
+.frame-corner.tl { top: 8px; left: 8px; }
+.frame-corner.tr { top: 8px; right: 8px; }
+.frame-corner.bl { bottom: 8px; left: 8px; }
+.frame-corner.br { bottom: 8px; right: 8px; }
+
+/* Romantic Love Message */
+.love-message-box {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 32px 36px;
+  margin: 0 auto 35px;
+  max-width: 740px;
+  box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.8), 0 8px 24px rgba(183, 110, 121, 0.08);
+  position: relative;
+}
+
+.quote-icon {
+  font-family: var(--font-serif);
+  font-size: 60px;
+  line-height: 1;
+  color: var(--blush-300);
+  margin-bottom: -15px;
+  opacity: 0.7;
+}
+
+.love-message-text {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  line-height: 1.7;
+  color: var(--text-main);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.love-message-author {
+  font-family: var(--font-script);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--rose-gold-dark);
+}
+
+/* Interactive Memory Reaction Bar */
+.reaction-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.reaction-btn {
+  background: #ffffff;
+  border: 1px solid var(--rose-gold-light);
+  color: var(--rose-gold-deep);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(183, 110, 121, 0.1);
+  transition: all 0.25s ease;
+}
+
+.reaction-btn:hover {
+  background: var(--blush-100);
+  border-color: var(--rose-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(183, 110, 121, 0.2);
+}
+
+.reaction-btn.loved {
+  background: linear-gradient(135deg, #ffccd5 0%, #ffb3c1 100%);
+  color: #9d0208;
+  border-color: #ff758f;
+}
+
+/* Bottom Navigation Bar */
+.bottom-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 28px;
+  border-radius: 50px;
+}
+
+.nav-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  background: #ffffff;
+  color: var(--rose-gold-deep);
+  border: 1px solid var(--rose-gold-light);
+  box-shadow: 0 6px 18px rgba(183, 110, 121, 0.12);
+  transition: all 0.3s ease;
+}
+
+.nav-link-btn:hover:not(.disabled) {
+  background: var(--rose-gold-gradient);
+  color: #ffffff;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(183, 110, 121, 0.3);
+}
+
+.nav-link-btn.primary {
+  background: linear-gradient(135deg, #e63946 0%, #b76e79 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 8px 24px rgba(230, 57, 70, 0.3);
+}
+
+.nav-link-btn.primary:hover {
+  box-shadow: 0 12px 30px rgba(230, 57, 70, 0.45);
+}
+
+.nav-link-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* GRAND FINALE (Minute 60) SPECIAL STYLING */
+.finale-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.finale-hero-card {
+  padding: 60px 45px 50px;
+  text-align: center;
+  border: 2px solid var(--rose-gold);
+  background: linear-gradient(135deg, #ffffff 0%, #fff3f5 50%, #fff0f3 100%);
+  box-shadow: 0 25px 60px rgba(217, 4, 41, 0.18), 0 0 40px rgba(224, 169, 109, 0.35);
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.finale-badge-glow {
+  background: linear-gradient(135deg, #ffd700 0%, #e0a96d 50%, #c58988 100%);
+  color: #4a2800;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 8px 26px;
+  border-radius: 50px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 18px rgba(224, 169, 109, 0.5);
+  animation: pulse-badge 2s infinite ease-in-out;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 18px rgba(224, 169, 109, 0.5); }
+  50% { transform: scale(1.04); box-shadow: 0 8px 26px rgba(224, 169, 109, 0.7); }
+}
+
+.finale-title {
+  font-size: 52px;
+  line-height: 1.15;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+
+.finale-subtitle {
+  font-family: var(--font-script);
+  font-size: 28px;
+  font-style: italic;
+  color: var(--accent-red);
+  margin-bottom: 30px;
+}
+
+/* Animated Birthday Cake */
+.birthday-cake-visual {
+  font-size: 72px;
+  margin-bottom: 24px;
+  display: inline-block;
+  filter: drop-shadow(0 10px 20px rgba(217, 4, 41, 0.25));
+  animation: cake-bounce 3s infinite ease-in-out;
+}
+
+@keyframes cake-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Heartfelt Birthday Letter Box */
+.birthday-letter-box {
+  background: #ffffff;
+  border: 1px solid var(--rose-gold-light);
+  border-radius: 24px;
+  padding: 50px 48px;
+  margin: 0 auto 40px;
+  box-shadow: 0 16px 40px rgba(183, 110, 121, 0.15);
+  text-align: left;
+  position: relative;
+}
+
+.letter-wax-seal {
+  position: absolute;
+  top: -24px;
+  right: 48px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #d90429 0%, #9d0208 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 6px 18px rgba(157, 2, 8, 0.4);
+}
+
+.letter-salutation {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--rose-gold-deep);
+  margin-bottom: 24px;
+}
+
+.letter-body p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--text-main);
+  margin-bottom: 20px;
+  font-family: var(--font-sans);
+}
+
+.letter-signoff {
+  margin-top: 36px;
+  font-family: var(--font-script);
+  font-size: 28px;
+  font-style: italic;
+  color: var(--accent-red);
+}
+
+.letter-signature {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-top: 6px;
+}
+
+/* Finale Celebration Action Bar */
+.finale-action-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .minute-main-heading {
+    font-size: 34px;
+  }
+  .love-message-text {
+    font-size: 20px;
+  }
+  .showcase-card {
+    padding: 30px 20px;
+  }
+  .birthday-letter-box {
+    padding: 36px 24px;
+  }
+  .bottom-nav-bar {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .nav-link-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .finale-title {
+    font-size: 38px;
+  }
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minute 33 • 60 Minutes of Love</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/minute.css">
+</head>
+<body>
+  <div class="page-container minute-page-wrapper">
+    <!-- Top Navigation Header -->
+    <header class="glass-card minute-nav-header">
+      <a href="../index.html" class="back-to-hub-btn">
+        <span>←</span> Romantic Hub
+      </a>
+      <div class="minute-tracker-badge">
+        <span>Minute 33</span>
+        <span style="color: var(--text-light); font-size: 14px; font-weight: normal;">/ 60</span>
+      </div>
+      <div class="quick-nav-arrows">
+        <a href="../Minute 32/index.html" class="arrow-nav-btn " title="Previous Minute">‹</a>
+        <a href="../Minute 34/index.html" class="arrow-nav-btn " id="next-arrow" title="Next Minute">›</a>
+      </div>
+    </header>
+
+    <!-- Main Showcase Card -->
+    <main class="glass-card showcase-card">
+      <div class="minute-badge-row">
+        <span class="time-badge">11:32 PM • 28 Min to Midnight</span>
+        <span class="rose-badge">Cherished Memory #33</span>
+      </div>
+
+      <h1 class="minute-main-heading gradient-title">Minute 33</h1>
+
+      <!-- Luxury Rounded Photo Frame -->
+      <div class="photo-frame-container">
+        <div class="photo-frame">
+          <span class="frame-corner tl">❦</span>
+          <span class="frame-corner tr">❦</span>
+          <span class="frame-corner bl">❦</span>
+          <span class="frame-corner br">❦</span>
+          <div class="photo-inner-wrapper">
+            
+        <img class="showcase-media" src="photo.jpg" alt="Minute 33 Memory" onerror="this.src='../assets/images/minute_33.jpg';">
+        
+          </div>
+        </div>
+      </div>
+
+      <!-- Love Message Box -->
+      <div class="love-message-box">
+        <div class="quote-icon">“</div>
+        <p class="love-message-text font-serif">I admire your strength, your gentle resilience, and the fierce grace with which you care for those you love.</p>
+        <div class="love-message-author">— Forever Yours ❤️</div>
+      </div>
+
+      <!-- Interactive Reaction Bar -->
+      <div class="reaction-bar">
+        <button class="reaction-btn" id="love-btn" onclick="toggleLove(this)">
+          <span class="btn-icon">❤️</span> Cherish this Moment
+        </button>
+        <button class="reaction-btn" onclick="celebrateSparkle()">
+          <span class="btn-icon">✨</span> Sparkle Love
+        </button>
+        <button class="reaction-btn audio-toggle-trigger" onclick="window.romanticAudio.toggle()">
+          <span class="audio-icon">🎵</span> <span class="audio-text">Play Romantic Melody</span>
+        </button>
+      </div>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="glass-card bottom-nav-bar">
+      <a href="../Minute 32/index.html" class="nav-link-btn ">
+        <span>←</span> Minute 32
+      </a>
+      <a href="../index.html" class="nav-link-btn primary">
+        <span>❤️</span> All 60 Minutes Hub
+      </a>
+      <a href="../Minute 34/index.html" class="nav-link-btn " id="next-minute-btn">
+        Minute 34 <span>→</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Romantic Ambient Audio Pill -->
+  <button class="audio-control-pill audio-toggle-trigger" onclick="window.romanticAudio.toggle()">
+    <span class="audio-pulse-icon audio-icon">🎵</span>
+    <span class="audio-text">Play Romantic Melody</span>
+  </button>
+
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/hearts.js"></script>
+  <script src="../assets/js/confetti.js"></script>
+  <script src="../assets/js/audio.js"></script>
+  <script src="../assets/js/unlock-engine.js"></script>
+  <script>
+    // Mark this minute as visited in storage
+    window.unlockEngine.markVisited(33);
+
+    // Check unlocking of next minute button
+    function updateNextButton() {
+      const nextBtn = document.getElementById('next-minute-btn');
+      const nextArrow = document.getElementById('next-arrow');
+      if (33 < 60) {
+        const isNextUnlocked = window.unlockEngine.isMinuteUnlocked(34);
+        if (!isNextUnlocked) {
+          nextBtn.classList.add('disabled');
+          nextBtn.title = 'Unlocks at ' + window.unlockEngine.formatTime(window.unlockEngine.getMinuteUnlockTime(34));
+          nextArrow.classList.add('disabled');
+          nextArrow.title = nextBtn.title;
+        } else {
+          nextBtn.classList.remove('disabled');
+          nextArrow.classList.remove('disabled');
+        }
+      }
+    }
+    updateNextButton();
+    setInterval(updateNextButton, 5000);
+
+    // Interactive Reaction
+    function toggleLove(btn) {
+      btn.classList.toggle('loved');
+      if (btn.classList.contains('loved')) {
+        btn.querySelector('.btn-icon').textContent = '💖';
+        btn.innerHTML = '<span class="btn-icon">💖</span> Cherished with Love!';
+        if (window.launchConfetti) window.launchConfetti();
+      } else {
+        btn.innerHTML = '<span class="btn-icon">❤️</span> Cherish this Moment';
+      }
+    }
+
+    function celebrateSparkle() {
+      if (window.launchConfetti) window.launchConfetti();
+      if (window.romanticAudio && !window.romanticAudio.isPlaying) {
+        window.romanticAudio.init();
+        window.romanticAudio.playChime(659.25, 0, 1.5);
+        window.romanticAudio.playChime(783.99, 0.15, 2.0);
+        window.romanticAudio.playChime(987.77, 0.3, 3.0);
+      }
+    }
+  </script>
+</body>
+</html>

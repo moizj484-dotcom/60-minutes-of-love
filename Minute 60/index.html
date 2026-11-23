@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minute 60 • Grand Finale • Happy Birthday!</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/minute.css">
+</head>
+<body>
+  <div class="page-container finale-container">
+    <!-- Top Navigation Header -->
+    <header class="glass-card minute-nav-header">
+      <a href="../index.html" class="back-to-hub-btn">
+        <span>←</span> Romantic Hub
+      </a>
+      <div class="minute-tracker-badge">
+        <span style="color: var(--accent-red); font-weight: 800;">Minute 60 of 60</span>
+        <span class="finale-badge" style="margin-left: 8px;">Grand Finale 👑</span>
+      </div>
+      <div class="quick-nav-arrows">
+        <a href="../Minute 59/index.html" class="arrow-nav-btn" title="Previous Minute">‹</a>
+        <a href="#" class="arrow-nav-btn disabled" title="Final Minute">✓</a>
+      </div>
+    </header>
+
+    <!-- Grand Finale Hero Card -->
+    <main class="glass-card finale-hero-card">
+      <div class="finale-badge-glow">✨ Midnight Celebration • 12:00 AM • 2 December ✨</div>
+      <div class="birthday-cake-visual">🎂</div>
+      
+      <h1 class="finale-title gradient-title">Happy Birthday, My Whole World!</h1>
+      <p class="finale-subtitle font-script">The 60-Minute Countdown is complete, but my love for you is eternal.</p>
+
+      <!-- Luxury Rounded Photo/Video Frame -->
+      <div class="photo-frame-container">
+        <div class="photo-frame" style="border-color: var(--rose-gold); box-shadow: 0 25px 60px rgba(217, 4, 41, 0.25);">
+          <span class="frame-corner tl">❦</span>
+          <span class="frame-corner tr">❦</span>
+          <span class="frame-corner bl">❦</span>
+          <span class="frame-corner br">❦</span>
+          <div class="photo-inner-wrapper">
+            
+        <video class="showcase-media" controls autoplay loop muted playsinline style="max-height: 580px;">
+          <source src="media.mp4" type="video/mp4">
+          <source src="../assets/images/minute_60.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        
+          </div>
+        </div>
+      </div>
+
+      <!-- Heartfelt Birthday Letter Box -->
+      <article class="birthday-letter-box">
+        <div class="letter-wax-seal">❤️</div>
+        <div class="letter-salutation">My Dearest Birthday Girl,</div>
+        
+        <div class="letter-body">
+          <p>
+            As the clock strikes midnight and the 2nd of December officially arrives, our 60-minute countdown has reached its sweetest milestone. Every single minute we counted down was simply a tiny reflection of the countless reasons why I thank the heavens every day for bringing you into this world.
+          </p>
+          <p>
+            Looking through these sixty moments—the spontaneous laughter, the gentle mornings, the quiet glances across crowded rooms, and the memories we have woven into our souls—I am reminded that you are not just my partner; you are my greatest blessing, my safest home, and the brightest light in my life.
+          </p>
+          <p>
+            You possess a rare and radiant heart. The kindness you give so freely, the grace with which you handle life, and the undeniable warmth of your smile turn ordinary days into unforgettable treasures. Being loved by you is the greatest gift I could ever ask for.
+          </p>
+          <p>
+            On this special birthday, I make these promises to you:
+            <br>• To stand beside you in every adventure and hold your hand through every storm.
+            <br>• To celebrate your triumphs louder than anyone else and believe in your dreams even when you doubt yourself.
+            <br>• To fill your days with unconditional warmth, boundless laughter, and endless affection.
+            <br>• And above all, to choose you, cherish you, and love you more deeply with every passing sunrise.
+          </p>
+          <p>
+            May this upcoming year be overflowing with radiant joy, vibrant health, exciting journeys, and every sweet blessing your heart has ever wished for. You deserve the entire universe and so much more.
+          </p>
+        </div>
+
+        <div class="letter-signoff">Happy Birthday, My Sweet Love,</div>
+        <div class="letter-signature">Forever & Endlessly Yours ❤️</div>
+      </article>
+
+      <!-- Finale Celebration Action Bar -->
+      <div class="finale-action-bar">
+        <button class="btn-romantic-primary" onclick="window.launchConfetti(); celebrateBirthdayTune();">
+          <span>🎉</span> Blast Celebration Confetti
+        </button>
+        <button class="btn-romantic-secondary audio-toggle-trigger" onclick="window.romanticAudio.toggle()">
+          <span class="audio-icon">🎶</span> <span class="audio-text">Play Romantic Melody</span>
+        </button>
+        <button class="btn-romantic-secondary" onclick="window.print()">
+          <span>📜</span> Print / Save Love Letter
+        </button>
+        <a href="../index.html" class="btn-romantic-secondary">
+          <span>❤️</span> Relive All 60 Minutes
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <!-- Romantic Ambient Audio Pill -->
+  <button class="audio-control-pill audio-toggle-trigger" onclick="window.romanticAudio.toggle()">
+    <span class="audio-pulse-icon audio-icon">🎵</span>
+    <span class="audio-text">Play Romantic Melody</span>
+  </button>
+
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/hearts.js"></script>
+  <script src="../assets/js/confetti.js"></script>
+  <script src="../assets/js/audio.js"></script>
+  <script src="../assets/js/unlock-engine.js"></script>
+  <script>
+    // Mark Minute 60 visited
+    window.unlockEngine.markVisited(60);
+
+    // Launch Confetti on load!
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        if (window.launchConfetti) window.launchConfetti();
+      }, 500);
+      setTimeout(() => {
+        if (window.launchConfetti) window.launchConfetti();
+      }, 1800);
+    });
+
+    function celebrateBirthdayTune() {
+      if (window.romanticAudio) {
+        window.romanticAudio.init();
+        // Play triumphant celebration chime
+        const notes = [523.25, 587.33, 659.25, 783.99, 1046.50];
+        notes.forEach((freq, i) => {
+          window.romanticAudio.playChime(freq, i * 0.15, 2.5);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>60 Minutes of Love • Romantic Birthday Countdown</title>
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/hub.css">
+</head>
+<body>
+  <div class="page-container">
+    <!-- Top Bar -->
+    <nav class="glass-card top-nav">
+      <a href="index.html" class="nav-brand">
+        <span style="font-size: 24px;">❦</span>
+        <span>60 Minutes of Love</span>
+      </a>
+      <div class="nav-actions">
+        <button class="nav-btn" id="preview-toggle-btn" onclick="togglePreviewMode()" title="Toggle Unlock All for testing">
+          <span id="preview-btn-icon">👁️</span> <span id="preview-btn-text">Preview Mode (Unlock All)</span>
+        </button>
+        <button class="nav-btn" onclick="openSettingsModal()" title="Configure Countdown Times">
+          <span>⚙️</span> Settings
+        </button>
+        <button class="nav-btn primary audio-toggle-trigger" onclick="window.romanticAudio.toggle()">
+          <span class="audio-icon">🎵</span> <span class="audio-text">Play Melody</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="glass-card hero-section">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <span>✨</span> Counting Down to 2 December • 12:00 AM Midnight
+        </div>
+        <h1 class="hero-title font-serif">
+          60 Minutes of <span class="gradient-title">Love</span>
+        </h1>
+        <p class="hero-subtitle">
+          "Sixty precious minutes, sixty memories, one extraordinary soul."
+        </p>
+        <p class="hero-description">
+          Welcome to your birthday countdown, my love. Starting at <strong>11:00 PM</strong>, a brand new memory, a heartfelt message, and a unique photograph will unlock every single minute, leading up to the stroke of midnight when the world celebrates the day you were born.
+        </p>
+
+        <!-- Birthday Countdown Clock -->
+        <div class="countdown-box">
+          <div class="countdown-label">
+            <span>⏳</span> <span id="countdown-label-text">Countdown to Midnight Celebration</span>
+          </div>
+          <div class="countdown-digits">
+            <div class="countdown-unit">
+              <div class="digit-card font-serif" id="cd-days">00</div>
+              <div class="unit-label">Days</div>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-unit">
+              <div class="digit-card font-serif" id="cd-hours">00</div>
+              <div class="unit-label">Hours</div>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-unit">
+              <div class="digit-card font-serif" id="cd-minutes">00</div>
+              <div class="unit-label">Minutes</div>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-unit">
+              <div class="digit-card font-serif" id="cd-seconds">00</div>
+              <div class="unit-label">Seconds</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Action Buttons -->
+        <div class="hero-cta-group">
+          <button class="btn-romantic-primary" onclick="startJourney()">
+            <span>✨</span> Begin Romantic Journey
+          </button>
+          <button class="btn-romantic-secondary" onclick="openSettingsModal()">
+            <span>⚙️</span> Customize Start Time
+          </button>
+          <button class="btn-romantic-secondary" onclick="window.launchConfetti()">
+            <span>🎉</span> Sparkle Confetti
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Progress Card -->
+    <section class="glass-card progress-card">
+      <div class="progress-header">
+        <div class="progress-title">
+          <span>❤️</span> <span>Unlocking Your Love Story</span>
+        </div>
+        <div class="progress-stats" id="progress-stats-text">
+          0 of 60 Minutes Unlocked (0%)
+        </div>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-bar-fill" style="width: 0%;"></div>
+      </div>
+    </section>
+
+    <!-- Live Mode & Control Banner -->
+    <div class="control-banner">
+      <div class="mode-indicator">
+        <span class="status-dot" id="mode-status-dot"></span>
+        <span id="mode-status-text">Countdown Active • 1 Minute Unlocks Every 60 Seconds</span>
+      </div>
+      <div class="control-buttons">
+        <button class="btn-sm-mode" onclick="togglePreviewMode()">
+          <span id="banner-toggle-icon">🔓</span> <span id="banner-toggle-text">Unlock All (Test Mode)</span>
+        </button>
+        <button class="btn-sm-mode" onclick="openSettingsModal()">
+          <span>⚙️</span> Change Times
+        </button>
+      </div>
+    </div>
+
+    <!-- 60 Minutes Grid -->
+    <main class="grid-container" id="grid-container">
+      
+      <a href="Minute 1/index.html" class="minute-card glass-card" id="card-minute-1" data-minute="1" onclick="handleCardClick(event, 1)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 1</div>
+          <span class="card-time">11:00 PM • 60m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_1.png" alt="Minute 1 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-1">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:00 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“60 minutes before midnight, and my heart already beats to the rhythm of your birth...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-1">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 2/index.html" class="minute-card glass-card" id="card-minute-2" data-minute="2" onclick="handleCardClick(event, 2)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 2</div>
+          <span class="card-time">11:01 PM • 59m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_2.png" alt="Minute 2 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-2">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:01 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“If I could give you one gift for every minute we countdown, it would still not be ...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-2">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 3/index.html" class="minute-card glass-card" id="card-minute-3" data-minute="3" onclick="handleCardClick(event, 3)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 3</div>
+          <span class="card-time">11:02 PM • 58m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_3.png" alt="Minute 3 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-3">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:02 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Do you know what my favorite place in the world is? Right next to you, watching yo...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-3">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 4/index.html" class="minute-card glass-card" id="card-minute-4" data-minute="4" onclick="handleCardClick(event, 4)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 4</div>
+          <span class="card-time">11:03 PM • 57m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_4.png" alt="Minute 4 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-4">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:03 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“You walked into my life and suddenly all the love songs made sense, all the quiet ...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-4">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 5/index.html" class="minute-card glass-card" id="card-minute-5" data-minute="5" onclick="handleCardClick(event, 5)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 5</div>
+          <span class="card-time">11:04 PM • 56m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_5.png" alt="Minute 5 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-5">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:04 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Looking at this picture, I remember the exact heartbeat where I realized I was irr...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-5">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 6/index.html" class="minute-card glass-card" id="card-minute-6" data-minute="6" onclick="handleCardClick(event, 6)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 6</div>
+          <span class="card-time">11:05 PM • 55m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_6.png" alt="Minute 6 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-6">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:05 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Some people search a lifetime to find their home. I found mine the first time you ...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-6">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 7/index.html" class="minute-card glass-card" id="card-minute-7" data-minute="7" onclick="handleCardClick(event, 7)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 7</div>
+          <span class="card-time">11:06 PM • 54m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_7.png" alt="Minute 7 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-7">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:06 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Your laughter is my favorite melody in the universe—it disarms every storm and fil...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-7">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 8/index.html" class="minute-card glass-card" id="card-minute-8" data-minute="8" onclick="handleCardClick(event, 8)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 8</div>
+          <span class="card-time">11:07 PM • 53m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_8.png" alt="Minute 8 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-8">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:07 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“In a world that is always in a hurry, you are the peace I want to slow down for, m...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-8">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 9/index.html" class="minute-card glass-card" id="card-minute-9" data-minute="9" onclick="handleCardClick(event, 9)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 9</div>
+          <span class="card-time">11:08 PM • 52m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_9.png" alt="Minute 9 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-9">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:08 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Every little thing about you is etched into my soul—the way you tilt your head, yo...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-9">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 10/index.html" class="minute-card glass-card" id="card-minute-10" data-minute="10" onclick="handleCardClick(event, 10)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 10</div>
+          <span class="card-time">11:09 PM • 51m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_10.png" alt="Minute 10 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-10">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:09 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Fifty minutes to midnight. Just ten minutes in, and my heart is overflowing with a...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-10">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 11/index.html" class="minute-card glass-card" id="card-minute-11" data-minute="11" onclick="handleCardClick(event, 11)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 11</div>
+          <span class="card-time">11:10 PM • 50m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_11.jpg" alt="Minute 11 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-11">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:10 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“I look at this memory and I smile, because even on our simplest days, you make lif...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-11">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 12/index.html" class="minute-card glass-card" id="card-minute-12" data-minute="12" onclick="handleCardClick(event, 12)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 12</div>
+          <span class="card-time">11:11 PM • 49m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_12.jpg" alt="Minute 12 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-12">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:11 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“You have this quiet grace that turns ordinary moments into memories I want to hold...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-12">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 13/index.html" class="minute-card glass-card" id="card-minute-13" data-minute="13" onclick="handleCardClick(event, 13)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 13</div>
+          <span class="card-time">11:12 PM • 48m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_13.jpg" alt="Minute 13 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-13">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:12 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Whenever the world gets too loud, you are my quiet refuge. Thank you for being the...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-13">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 14/index.html" class="minute-card glass-card" id="card-minute-14" data-minute="14" onclick="handleCardClick(event, 14)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 14</div>
+          <span class="card-time">11:13 PM • 47m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_14.jpg" alt="Minute 14 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-14">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:13 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“I love the way we can talk about everything and nothing at all, and somehow both a...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-14">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 15/index.html" class="minute-card glass-card" id="card-minute-15" data-minute="15" onclick="handleCardClick(event, 15)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 15</div>
+          <span class="card-time">11:14 PM • 46m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_15.jpg" alt="Minute 15 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-15">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:14 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“You are not just the person I love; you are my best friend, my safest harbor, and ...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-15">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 16/index.html" class="minute-card glass-card" id="card-minute-16" data-minute="16" onclick="handleCardClick(event, 16)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 16</div>
+          <span class="card-time">11:15 PM • 45m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_16.jpg" alt="Minute 16 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-16">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:15 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Look at that smile. That single expression has carried me through hard days and re...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-16">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 17/index.html" class="minute-card glass-card" id="card-minute-17" data-minute="17" onclick="handleCardClick(event, 17)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 17</div>
+          <span class="card-time">11:16 PM • 44m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_17.jpg" alt="Minute 17 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-17">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:16 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Forty-four minutes until your birthday. My heart is counting down each beat, thank...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-17">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 18/index.html" class="minute-card glass-card" id="card-minute-18" data-minute="18" onclick="handleCardClick(event, 18)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 18</div>
+          <span class="card-time">11:17 PM • 43m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_18.jpg" alt="Minute 18 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-18">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:17 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“I promise to always hold your hand a little tighter when life gets bumpy, and cele...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-18">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 19/index.html" class="minute-card glass-card" id="card-minute-19" data-minute="19" onclick="handleCardClick(event, 19)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 19</div>
+          <span class="card-time">11:18 PM • 42m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_19.jpg" alt="Minute 19 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-19">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:18 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“There is a gentleness in your heart that inspires me every day to be a kinder, bet...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-19">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 20/index.html" class="minute-card glass-card" id="card-minute-20" data-minute="20" onclick="handleCardClick(event, 20)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 20</div>
+          <span class="card-time">11:19 PM • 41m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_20.jpg" alt="Minute 20 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-20">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:19 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Forty minutes left. You are the wish I didn't even know my heart was making until ...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-20">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 21/index.html" class="minute-card glass-card" id="card-minute-21" data-minute="21" onclick="handleCardClick(event, 21)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 21</div>
+          <span class="card-time">11:20 PM • 40m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_21.jpg" alt="Minute 21 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-21">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:20 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Halfway through our countdown journey, and all I can think about is how much deepe...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-21">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 22/index.html" class="minute-card glass-card" id="card-minute-22" data-minute="22" onclick="handleCardClick(event, 22)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 22</div>
+          <span class="card-time">11:21 PM • 39m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_22.jpg" alt="Minute 22 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-22">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:21 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“I cherish every coffee shared, every quiet silence, every drive where the radio pl...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-22">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 23/index.html" class="minute-card glass-card" id="card-minute-23" data-minute="23" onclick="handleCardClick(event, 23)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 23</div>
+          <span class="card-time">11:22 PM • 38m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_23.jpg" alt="Minute 23 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-23">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:22 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“You taught me that true love isn't loud or demanding—it is patient, generous, comf...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-23">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 24/index.html" class="minute-card glass-card" id="card-minute-24" data-minute="24" onclick="handleCardClick(event, 24)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 24</div>
+          <span class="card-time">11:23 PM • 37m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_24.jpg" alt="Minute 24 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-24">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:23 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Thank you for loving me even when I'm imperfect, and for believing in my dreams wh...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-24">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 25/index.html" class="minute-card glass-card" id="card-minute-25" data-minute="25" onclick="handleCardClick(event, 25)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 25</div>
+          <span class="card-time">11:24 PM • 36m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_25.jpg" alt="Minute 25 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-25">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:24 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Every memory we build is a treasure I keep locked safely in my heart, guarded by g...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-25">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 26/index.html" class="minute-card glass-card" id="card-minute-26" data-minute="26" onclick="handleCardClick(event, 26)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 26</div>
+          <span class="card-time">11:25 PM • 35m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_26.jpg" alt="Minute 26 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-26">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:25 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Thirty-four minutes to midnight. Time is moving closer to the exact second that br...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-26">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 27/index.html" class="minute-card glass-card" id="card-minute-27" data-minute="27" onclick="handleCardClick(event, 27)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 27</div>
+          <span class="card-time">11:26 PM • 34m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_27.jpg" alt="Minute 27 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-27">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:26 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“If love was measured in ocean drops, I would have drowned in the endless sea of af...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-27">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 28/index.html" class="minute-card glass-card" id="card-minute-28" data-minute="28" onclick="handleCardClick(event, 28)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 28</div>
+          <span class="card-time">11:27 PM • 33m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_28.jpg" alt="Minute 28 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-28">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:27 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“I love how your eyes crinkle when you're truly happy. I want to spend my life bein...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-28">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 29/index.html" class="minute-card glass-card" id="card-minute-29" data-minute="29" onclick="handleCardClick(event, 29)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 29</div>
+          <span class="card-time">11:28 PM • 32m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_29.jpg" alt="Minute 29 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-29">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:28 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“You make kindness look effortless, compassion look natural, and love feel like com...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-29">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 30/index.html" class="minute-card glass-card" id="card-minute-30" data-minute="30" onclick="handleCardClick(event, 30)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 30</div>
+          <span class="card-time">11:29 PM • 31m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_30.jpg" alt="Minute 30 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-30">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:29 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Thirty minutes left—half an hour till your special day. Half an hour till we celeb...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-30">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 31/index.html" class="minute-card glass-card" id="card-minute-31" data-minute="31" onclick="handleCardClick(event, 31)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 31</div>
+          <span class="card-time">11:30 PM • 30m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_31.jpg" alt="Minute 31 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-31">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:30 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Twenty-nine minutes. Look at how far we have walked together, hand in hand, hearts...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-31">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 32/index.html" class="minute-card glass-card" id="card-minute-32" data-minute="32" onclick="handleCardClick(event, 32)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 32</div>
+          <span class="card-time">11:31 PM • 29m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_32.jpg" alt="Minute 32 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-32">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:31 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“With you, even a mundane Tuesday feels like an adventure, and a quiet rainy evenin...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-32">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 33/index.html" class="minute-card glass-card" id="card-minute-33" data-minute="33" onclick="handleCardClick(event, 33)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 33</div>
+          <span class="card-time">11:32 PM • 28m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_33.jpg" alt="Minute 33 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-33">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:32 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“I admire your strength, your gentle resilience, and the fierce grace with which yo...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-33">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 34/index.html" class="minute-card glass-card" id="card-minute-34" data-minute="34" onclick="handleCardClick(event, 34)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 34</div>
+          <span class="card-time">11:33 PM • 27m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_34.jpg" alt="Minute 34 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-34">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:33 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Whenever I count my blessings, I count you twice—once for entering my life, and on...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-34">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 35/index.html" class="minute-card glass-card" id="card-minute-35" data-minute="35" onclick="handleCardClick(event, 35)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 35</div>
+          <span class="card-time">11:34 PM • 26m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_35.jpg" alt="Minute 35 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-35">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:34 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“This photograph holds a piece of our story that I never want to forget. Thank you ...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-35">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 36/index.html" class="minute-card glass-card" id="card-minute-36" data-minute="36" onclick="handleCardClick(event, 36)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 36</div>
+          <span class="card-time">11:35 PM • 25m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_36.jpg" alt="Minute 36 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-36">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:35 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Twenty-four minutes to midnight. The countdown is narrowing, and my excitement is ...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-36">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 37/index.html" class="minute-card glass-card" id="card-minute-37" data-minute="37" onclick="handleCardClick(event, 37)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 37</div>
+          <span class="card-time">11:36 PM • 24m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_37.jpg" alt="Minute 37 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-37">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:36 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“I choose you. In every lifetime, in every world, across every version of reality, ...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-37">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 38/index.html" class="minute-card glass-card" id="card-minute-38" data-minute="38" onclick="handleCardClick(event, 38)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 38</div>
+          <span class="card-time">11:37 PM • 23m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_38.jpg" alt="Minute 38 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-38">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:37 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“You give the sweetest hugs that have the supernatural power of making everything f...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-38">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 39/index.html" class="minute-card glass-card" id="card-minute-39" data-minute="39" onclick="handleCardClick(event, 39)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 39</div>
+          <span class="card-time">11:38 PM • 22m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_39.jpg" alt="Minute 39 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-39">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:38 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Thank you for being my anchor in the storm and the sunshine after the rain.”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-39">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 40/index.html" class="minute-card glass-card" id="card-minute-40" data-minute="40" onclick="handleCardClick(event, 40)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 40</div>
+          <span class="card-time">11:39 PM • 21m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_40.jpg" alt="Minute 40 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-40">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:39 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Twenty minutes left! The clock is ticking down, and my love for you is multiplying...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-40">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 41/index.html" class="minute-card glass-card" id="card-minute-41" data-minute="41" onclick="handleCardClick(event, 41)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 41</div>
+          <span class="card-time">11:40 PM • 20m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_41.jpg" alt="Minute 41 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-41">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:40 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Nineteen minutes until we turn the calendar page to the day that belongs entirely ...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-41">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 42/index.html" class="minute-card glass-card" id="card-minute-42" data-minute="42" onclick="handleCardClick(event, 42)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 42</div>
+          <span class="card-time">11:41 PM • 19m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_42.jpg" alt="Minute 42 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-42">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:41 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“You deserve all the roses, all the softest blankets, all the sweet songs, and ever...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-42">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 43/index.html" class="minute-card glass-card" id="card-minute-43" data-minute="43" onclick="handleCardClick(event, 43)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 43</div>
+          <span class="card-time">11:42 PM • 18m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_43.jpg" alt="Minute 43 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-43">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:42 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“I see the pure magic in you even on days when you feel tired. You are radiant in e...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-43">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 44/index.html" class="minute-card glass-card" id="card-minute-44" data-minute="44" onclick="handleCardClick(event, 44)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 44</div>
+          <span class="card-time">11:43 PM • 17m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_44.jpg" alt="Minute 44 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-44">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:43 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Sixteen minutes. My heartbeat is synchronizing with the clock. Tonight is all abou...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-44">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 45/index.html" class="minute-card glass-card" id="card-minute-45" data-minute="45" onclick="handleCardClick(event, 45)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 45</div>
+          <span class="card-time">11:44 PM • 16m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_45.jpg" alt="Minute 45 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-45">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:44 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“In your presence, my heart is completely at rest. You are the melody that plays so...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-45">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 46/index.html" class="minute-card glass-card" id="card-minute-46" data-minute="46" onclick="handleCardClick(event, 46)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 46</div>
+          <span class="card-time">11:45 PM • 15m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_46.jpg" alt="Minute 46 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-46">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:45 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Look at this moment captured in time. Each photo is a testament to how blessed I a...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-46">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 47/index.html" class="minute-card glass-card" id="card-minute-47" data-minute="47" onclick="handleCardClick(event, 47)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 47</div>
+          <span class="card-time">11:46 PM • 14m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_47.jpg" alt="Minute 47 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-47">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:46 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Thirteen minutes to midnight. Can you feel the love that surrounds you? It's echoi...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-47">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 48/index.html" class="minute-card glass-card" id="card-minute-48" data-minute="48" onclick="handleCardClick(event, 48)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 48</div>
+          <span class="card-time">11:47 PM • 13m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_48.jpg" alt="Minute 48 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-48">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:47 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“You have a heart made of gold and stardust, and I will spend my life making sure y...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-48">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 49/index.html" class="minute-card glass-card" id="card-minute-49" data-minute="49" onclick="handleCardClick(event, 49)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 49</div>
+          <span class="card-time">11:48 PM • 12m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_49.jpg" alt="Minute 49 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-49">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:48 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Eleven minutes left. The countdown is almost in single digits. My anticipation is ...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-49">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 50/index.html" class="minute-card glass-card" id="card-minute-50" data-minute="50" onclick="handleCardClick(event, 50)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 50</div>
+          <span class="card-time">11:49 PM • 11m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_50.jpg" alt="Minute 50 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-50">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:49 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Ten minutes to midnight! Exactly ten minutes until your birthday arrives, my sweet...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-50">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 51/index.html" class="minute-card glass-card" id="card-minute-51" data-minute="51" onclick="handleCardClick(event, 51)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 51</div>
+          <span class="card-time">11:50 PM • 10m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_51.jpg" alt="Minute 51 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-51">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:50 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Nine minutes. Think of all the dreams waiting for you in this new year of your lif...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-51">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 52/index.html" class="minute-card glass-card" id="card-minute-52" data-minute="52" onclick="handleCardClick(event, 52)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 52</div>
+          <span class="card-time">11:51 PM • 9m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_52.jpg" alt="Minute 52 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-52">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:51 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Eight minutes. The universe was preparing something truly magnificent the night be...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-52">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 53/index.html" class="minute-card glass-card" id="card-minute-53" data-minute="53" onclick="handleCardClick(event, 53)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 53</div>
+          <span class="card-time">11:52 PM • 8m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_53.jpg" alt="Minute 53 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-53">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:52 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Seven minutes. My eyes are on the clock, but my mind is on you—your touch, your vo...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-53">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 54/index.html" class="minute-card glass-card" id="card-minute-54" data-minute="54" onclick="handleCardClick(event, 54)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 54</div>
+          <span class="card-time">11:53 PM • 7m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_54.jpg" alt="Minute 54 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-54">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:53 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Six minutes. If I could freeze time, I would choose this exact feeling of devotion...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-54">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 55/index.html" class="minute-card glass-card" id="card-minute-55" data-minute="55" onclick="handleCardClick(event, 55)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 55</div>
+          <span class="card-time">11:54 PM • 6m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_55.jpg" alt="Minute 55 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-55">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:54 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Five minutes left! Just five minutes before the clock strikes midnight and announc...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-55">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 56/index.html" class="minute-card glass-card" id="card-minute-56" data-minute="56" onclick="handleCardClick(event, 56)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 56</div>
+          <span class="card-time">11:55 PM • 5m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <img class="card-thumb" src="assets/images/minute_56.jpg" alt="Minute 56 Memory" loading="lazy">
+    
+          <div class="lock-overlay" id="lock-overlay-56">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:55 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Four minutes. My heart is racing with joy. You are the love of my life, today, tom...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-56">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 57/index.html" class="minute-card glass-card" id="card-minute-57" data-minute="57" onclick="handleCardClick(event, 57)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 57</div>
+          <span class="card-time">11:56 PM • 4m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <video class="card-thumb" muted loop playsinline>
+        <source src="assets/images/minute_57.mp4" type="video/mp4">
+      </video>
+    
+          <div class="lock-overlay" id="lock-overlay-57">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:56 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Three minutes! Close your eyes and feel how deeply you are loved. Every star in th...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-57">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 58/index.html" class="minute-card glass-card" id="card-minute-58" data-minute="58" onclick="handleCardClick(event, 58)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 58</div>
+          <span class="card-time">11:57 PM • 3m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <video class="card-thumb" muted loop playsinline>
+        <source src="assets/images/minute_58.mp4" type="video/mp4">
+      </video>
+    
+          <div class="lock-overlay" id="lock-overlay-58">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:57 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“Two minutes! We are at the very threshold of your birthday. The sweetest moment is...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-58">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 59/index.html" class="minute-card glass-card" id="card-minute-59" data-minute="59" onclick="handleCardClick(event, 59)">
+        <div class="card-header">
+          <div class="card-num font-serif">Minute 59</div>
+          <span class="card-time">11:58 PM • 2m left</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <video class="card-thumb" muted loop playsinline>
+        <source src="assets/images/minute_59.mp4" type="video/mp4">
+      </video>
+    
+          <div class="lock-overlay" id="lock-overlay-59">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 11:58 PM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“One minute left! Sixty seconds until midnight. Take my hand, take a breath, and ge...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-59">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+
+      <a href="Minute 60/index.html" class="minute-card glass-card grand-finale" id="card-minute-60" data-minute="60" onclick="handleCardClick(event, 60)">
+        <div class="card-header">
+          <div class="card-num font-serif">👑 Minute 60: Grand Finale</div>
+          <span class="finale-badge">Grand Finale 👑</span>
+        </div>
+        
+        <div class="card-thumb-wrap">
+          
+      <video class="card-thumb" muted loop playsinline>
+        <source src="assets/images/minute_60.mp4" type="video/mp4">
+      </video>
+    
+          <div class="lock-overlay" id="lock-overlay-60">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text font-serif">Unlocks at 12:00 AM</span>
+          </div>
+        </div>
+
+        <p class="card-snippet font-serif">“HAPPY BIRTHDAY MY WHOLE WORLD! 12:00 AM Midnight Grand Finale! You are my greatest...”</p>
+
+        <div class="card-footer">
+          <span class="card-status" id="status-minute-60">
+            <span class="status-icon">🔒</span> <span class="status-text">Locked</span>
+          </span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    
+    </main>
+
+    <!-- Romantic Footer -->
+    <footer style="text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 14px;">
+      <p style="font-family: var(--font-serif); font-size: 18px; color: var(--rose-gold-deep); margin-bottom: 8px;">
+        ❦ 60 Minutes of Love • Forever & Always ❦
+      </p>
+      <p>Crafted with endless devotion for your birthday • 2 December</p>
+    </footer>
+  </div>
+
+  <!-- Romantic Ambient Audio Pill -->
+  <button class="audio-control-pill audio-toggle-trigger" onclick="window.romanticAudio.toggle()">
+    <span class="audio-pulse-icon audio-icon">🎵</span>
+    <span class="audio-text">Play Romantic Melody</span>
+  </button>
+
+  <!-- Settings Modal -->
+  <div class="modal-overlay" id="settings-modal" onclick="closeSettingsIfOutside(event)">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title font-serif">
+          <span>⚙️</span> Countdown Settings
+        </h3>
+        <button class="modal-close-btn" onclick="closeSettingsModal()">&times;</button>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Recipient Name / Moniker</label>
+        <input type="text" id="cfg-recipient" class="form-input" placeholder="My Love">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Countdown Start Time (11:00 PM on 1 Dec)</label>
+        <input type="datetime-local" id="cfg-start-time" class="form-input">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Birthday Midnight Time (12:00 AM on 2 Dec)</label>
+        <input type="datetime-local" id="cfg-birthday-time" class="form-input">
+      </div>
+
+      <div class="form-group" style="display: flex; align-items: center; justify-content: space-between; background: var(--blush-100); padding: 12px 16px; border-radius: 12px; border: 1px solid var(--rose-gold-light);">
+        <div>
+          <div style="font-weight: 700; font-size: 14px; color: var(--rose-gold-deep);">Instant Unlock / Preview Mode</div>
+          <div style="font-size: 12px; color: var(--text-muted);">Unlocks all 60 minutes immediately for testing</div>
+        </div>
+        <input type="checkbox" id="cfg-preview-mode" style="width: 22px; height: 22px; cursor: pointer; accent-color: var(--accent-red);">
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-romantic-secondary" style="padding: 10px 18px; font-size: 13px;" onclick="resetToDefaults()">
+          Reset to Defaults
+        </button>
+        <button class="btn-romantic-primary" style="padding: 10px 24px; font-size: 14px;" onclick="saveSettings()">
+          Save Settings
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Locked Minute Romantic Notice Modal -->
+  <div class="modal-overlay" id="lock-modal" onclick="closeLockModalIfOutside(event)">
+    <div class="modal-box" style="text-align: center; max-width: 440px;">
+      <div style="font-size: 48px; margin-bottom: 12px;">🔒❤️</div>
+      <h3 class="modal-title font-serif" style="justify-content: center; margin-bottom: 12px;" id="lock-modal-title">
+        A Sweet Secret Awaits
+      </h3>
+      <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6; margin-bottom: 24px;" id="lock-modal-desc">
+        Patience, my love! This memory is locked until its scheduled minute.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 12px;">
+        <button class="btn-romantic-secondary" onclick="closeLockModal()">
+          Wait with Love ❤️
+        </button>
+        <button class="btn-romantic-primary" onclick="unlockAllNowFromModal()">
+          <span>🔓</span> Unlock in Preview Mode
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/hearts.js"></script>
+  <script src="assets/js/confetti.js"></script>
+  <script src="assets/js/audio.js"></script>
+  <script src="assets/js/unlock-engine.js"></script>
+  <script>
+    // Update Dashboard State
+    function refreshDashboard() {
+      const status = window.unlockEngine.getUnlockStatus();
+      const cfg = window.unlockEngine.config;
+
+      // Update Countdown Clock
+      let targetMs = status.isStarted ? status.msUntilBirthday : status.msUntilStart;
+      const labelText = status.isStarted ? 'Countdown to 12:00 AM Midnight Birthday' : 'Countdown to 11:00 PM Unlock Start';
+      document.getElementById('countdown-label-text').textContent = status.previewMode ? '✨ Preview Mode Active: All 60 Minutes Unlocked' : labelText;
+
+      const cd = window.unlockEngine.formatCountdown(targetMs);
+      document.getElementById('cd-days').textContent = cd.days;
+      document.getElementById('cd-hours').textContent = cd.hours;
+      document.getElementById('cd-minutes').textContent = cd.minutes;
+      document.getElementById('cd-seconds').textContent = cd.seconds;
+
+      // Update Progress Bar
+      const count = status.unlockedCount;
+      const pct = Math.round((count / 60) * 100);
+      document.getElementById('progress-bar-fill').style.width = pct + '%';
+      document.getElementById('progress-stats-text').textContent = `${count} of 60 Minutes Unlocked (${pct}%)`;
+
+      // Update Mode Banner & Button
+      const dot = document.getElementById('mode-status-dot');
+      const text = document.getElementById('mode-status-text');
+      const prevBtnText = document.getElementById('preview-btn-text');
+      const prevBtnIcon = document.getElementById('preview-btn-icon');
+      const bannerToggleText = document.getElementById('banner-toggle-text');
+      const bannerToggleIcon = document.getElementById('banner-toggle-icon');
+
+      if (status.previewMode) {
+        dot.className = 'status-dot preview';
+        text.textContent = 'Preview Mode Active • All 60 Minutes Unlocked for Testing';
+        prevBtnText.textContent = 'Switch to Live Mode';
+        prevBtnIcon.textContent = '⏳';
+        bannerToggleText.textContent = 'Return to Live Countdown';
+        bannerToggleIcon.textContent = '⏳';
+      } else {
+        dot.className = 'status-dot';
+        text.textContent = status.isStarted 
+          ? `Live Countdown Active • Minute ${status.elapsedMinutes} of 60 currently live` 
+          : 'Live Countdown Active • Scheduled to start at 11:00 PM';
+        prevBtnText.textContent = 'Preview Mode (Unlock All)';
+        prevBtnIcon.textContent = '👁️';
+        bannerToggleText.textContent = 'Unlock All (Test Mode)';
+        bannerToggleIcon.textContent = '🔓';
+      }
+
+      // Update 60 Grid Cards
+      for (let m = 1; m <= 60; m++) {
+        const card = document.getElementById(`card-minute-${m}`);
+        const lockOverlay = document.getElementById(`lock-overlay-${m}`);
+        const statusEl = document.getElementById(`status-minute-${m}`);
+        if (!card) continue;
+
+        const isUnlocked = window.unlockEngine.isMinuteUnlocked(m);
+        const isVisited = window.unlockEngine.isVisited(m);
+
+        if (isUnlocked) {
+          card.classList.remove('locked');
+          lockOverlay.style.display = 'none';
+          if (m === 60) {
+            statusEl.innerHTML = '<span class="status-icon">👑</span> <span class="status-text" style="color: var(--gold-accent);">Ready for Midnight!</span>';
+          } else if (isVisited) {
+            statusEl.innerHTML = '<span class="status-icon">💖</span> <span class="status-text" style="color: var(--accent-red);">Cherished</span>';
+          } else {
+            statusEl.innerHTML = '<span class="status-icon">❤️</span> <span class="status-text">Unlocked</span>';
+          }
+        } else {
+          card.classList.add('locked');
+          lockOverlay.style.display = 'flex';
+          const unlockTime = window.unlockEngine.getMinuteUnlockTime(m);
+          statusEl.className = 'card-status locked-status';
+          statusEl.innerHTML = `<span class="status-icon">🔒</span> <span class="status-text">Unlocks at ${window.unlockEngine.formatTime(unlockTime)}</span>`;
+        }
+      }
+    }
+
+    // Real-time ticking every second
+    setInterval(refreshDashboard, 1000);
+    document.addEventListener('DOMContentLoaded', refreshDashboard);
+
+    // Card click handler for locked items
+    function handleCardClick(event, minuteNum) {
+      const isUnlocked = window.unlockEngine.isMinuteUnlocked(minuteNum);
+      if (!isUnlocked) {
+        event.preventDefault();
+        const unlockTime = window.unlockEngine.getMinuteUnlockTime(minuteNum);
+        document.getElementById('lock-modal-title').textContent = `Minute ${minuteNum} is Locked`;
+        document.getElementById('lock-modal-desc').innerHTML = `This memory is scheduled to unlock at <strong>${window.unlockEngine.formatTime(unlockTime)}</strong> during the countdown.<br><br>Would you like to unlock all 60 minutes now in Preview Mode to test everything?`;
+        document.getElementById('lock-modal').classList.add('active');
+      }
+    }
+
+    function closeLockModal() {
+      document.getElementById('lock-modal').classList.remove('active');
+    }
+
+    function closeLockModalIfOutside(e) {
+      if (e.target.id === 'lock-modal') closeLockModal();
+    }
+
+    function unlockAllNowFromModal() {
+      closeLockModal();
+      togglePreviewMode(true);
+    }
+
+    // Begin journey CTA (scrolls to earliest unlocked or begins at Minute 1)
+    function startJourney() {
+      const status = window.unlockEngine.getUnlockStatus();
+      if (status.unlockedCount > 0) {
+        window.location.href = `Minute ${status.unlockedCount}/index.html`;
+      } else {
+        // Scroll smoothly to grid
+        document.getElementById('grid-container').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Toggle Preview Mode
+    function togglePreviewMode(forceVal) {
+      const cfg = getAppConfig();
+      cfg.previewMode = (forceVal !== undefined) ? forceVal : !cfg.previewMode;
+      saveAppConfig(cfg);
+      refreshDashboard();
+      if (cfg.previewMode && window.launchConfetti) {
+        window.launchConfetti();
+      }
+    }
+
+    // Settings Modal
+    function openSettingsModal() {
+      const cfg = getAppConfig();
+      document.getElementById('cfg-recipient').value = cfg.recipientName || 'My Love';
+      document.getElementById('cfg-start-time').value = cfg.countdownStartTime;
+      document.getElementById('cfg-birthday-time').value = cfg.birthdayTargetTime;
+      document.getElementById('cfg-preview-mode').checked = !!cfg.previewMode;
+      document.getElementById('settings-modal').classList.add('active');
+    }
+
+    function closeSettingsModal() {
+      document.getElementById('settings-modal').classList.remove('active');
+    }
+
+    function closeSettingsIfOutside(e) {
+      if (e.target.id === 'settings-modal') closeSettingsModal();
+    }
+
+    function saveSettings() {
+      const cfg = getAppConfig();
+      cfg.recipientName = document.getElementById('cfg-recipient').value || 'My Love';
+      cfg.countdownStartTime = document.getElementById('cfg-start-time').value;
+      cfg.birthdayTargetTime = document.getElementById('cfg-birthday-time').value;
+      cfg.previewMode = document.getElementById('cfg-preview-mode').checked;
+      saveAppConfig(cfg);
+      closeSettingsModal();
+      refreshDashboard();
+      if (window.launchConfetti) window.launchConfetti();
+    }
+
+    function resetToDefaults() {
+      localStorage.removeItem('love_countdown_config');
+      localStorage.removeItem('love_visited_minutes');
+      closeSettingsModal();
+      refreshDashboard();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+================================================================================
+          60 MINUTES OF LOVE - MANUAL PHOTO & MESSAGE REPLACEMENT GUIDE
+================================================================================
+
+All 60 media files from your Google Drive folder have been automatically 
+retrieved, organized, and assigned to Minute 1 through Minute 60!
+
+If you ever wish to replace or customize any photograph, video, or message,
+follow these simple steps:
+
+--------------------------------------------------------------------------------
+1. HOW TO REPLACE A PHOTO OR VIDEO FOR ANY MINUTE:
+--------------------------------------------------------------------------------
+Each minute folder (e.g., "Minute 1", "Minute 2", ... "Minute 60") contains
+its own local copy of the photograph/video:
+  - Folder: "Minute 1" contains "photo.png"
+  - Folder: "Minute 15" contains "photo.jpg"
+  - Folder: "Minute 60" contains "media.mp4" (or your final birthday photo)
+
+To replace a photo:
+  1. Open the folder for that minute (e.g. Desktop\60 Minutes of Love\Minute 5).
+  2. Take your new photo and rename it to match the existing file (e.g. "photo.jpg" 
+     or "photo.png").
+  3. Replace the existing file inside that minute folder!
+  4. (Optional) Also replace the corresponding file in "assets\images\minute_5.jpg" 
+     so the thumbnail on the main homepage updates as well.
+
+--------------------------------------------------------------------------------
+2. HOW TO EDIT A ROMANTIC MESSAGE:
+--------------------------------------------------------------------------------
+  1. Open the folder for that minute (e.g. "Minute 7").
+  2. Right-click "index.html" and open it with Notepad (or any text editor).
+  3. Look for the text inside `<p class="love-message-text font-serif">...`.
+  4. Edit the message to whatever you desire and save the file (Ctrl+S)!
+  5. Refresh your browser to see your updated message!
+
+--------------------------------------------------------------------------------
+3. HOW TO CONFIGURE COUNTDOWN START TIME & PREVIEW MODE:
+--------------------------------------------------------------------------------
+The project features an interactive Settings panel right on the main homepage!
+  1. Open "index.html" in your browser.
+  2. Click the "⚙️ Settings" button in the top navigation or hero section.
+  3. You can change:
+     - Recipient Name (e.g. Her nickname or name)
+     - Countdown Start Time (Default: 11:00 PM on 1 Dec)
+     - Birthday Midnight Time (Default: 12:00 AM on 2 Dec)
+     - Instant Unlock / Preview Mode (Check this box to unlock all 60 pages instantly!)
+  4. Click "Save Settings" and the website will immediately update!
+
+--------------------------------------------------------------------------------
+4. 100% OFFLINE FUNCTIONALITY:
+--------------------------------------------------------------------------------
+Every single asset (HTML, CSS, JavaScript engines, fonts, particle canvas, 
+synthesizer chimes, confetti cannon, and all 60 photographs/videos) is stored 
+directly inside this Desktop folder. No active internet connection is required!
+
+Enjoy celebrating this unforgettable birthday! ❤️
+================================================================================
