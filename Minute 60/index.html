@@ -24,8 +24,31 @@
       </div>
     </header>
 
-    <!-- Grand Finale Hero Card -->
-    <main class="glass-card finale-hero-card">
+    <!-- LOCKED VAULT SCREEN: Displayed when current time < 12:00 AM Midnight -->
+    <main class="glass-card locked-vault-card" id="vault-locked-screen">
+      <div class="vault-lock-icon">👑❤️</div>
+      <div class="vault-badge">Minute 60 • The Midnight Grand Finale</div>
+      <h1 class="vault-title font-serif">The Grand Finale Awaits</h1>
+      <p class="vault-desc">
+        The heartfelt birthday letter, birthday cake celebration, and final memory will reveal at <strong>12:00 AM Midnight</strong> on 2 December!
+      </p>
+
+      <div class="vault-timer-box">
+        <div class="vault-timer-label">Midnight Celebration In:</div>
+        <div class="vault-timer-digits font-serif" id="vault-countdown-text">--:--:--</div>
+      </div>
+
+      <p class="vault-subtext">“Counting down every single heartbeat until your birthday arrives...”</p>
+      
+      <div style="margin-top: 30px;">
+        <a href="../index.html" class="nav-link-btn primary">
+          <span>←</span> Return to Romantic Hub
+        </a>
+      </div>
+    </main>
+
+    <!-- UNLOCKED GRAND FINALE CARD: Strictly revealed ONLY at 12:00 AM Midnight -->
+    <main class="glass-card finale-hero-card" id="unlocked-content" style="display: none;">
       <div class="finale-badge-glow">✨ Midnight Celebration • 12:00 AM • 2 December ✨</div>
       <div class="birthday-cake-visual">🎂</div>
       
@@ -41,12 +64,12 @@
           <span class="frame-corner br">❦</span>
           <div class="photo-inner-wrapper">
             
-        <video class="showcase-media" controls autoplay loop muted playsinline style="max-height: 580px;">
+        <video class="showcase-media" controls autoplay loop muted playsinline style="max-height: 540px;">
           <source src="media.mp4" type="video/mp4">
           <source src="../assets/images/minute_60.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        
+    
           </div>
         </div>
       </div>
@@ -112,23 +135,44 @@
   <script src="../assets/js/audio.js"></script>
   <script src="../assets/js/unlock-engine.js"></script>
   <script>
-    // Mark Minute 60 visited
-    window.unlockEngine.markVisited(60);
+    let finaleCelebrated = false;
 
-    // Launch Confetti on load!
-    window.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        if (window.launchConfetti) window.launchConfetti();
-      }, 500);
-      setTimeout(() => {
-        if (window.launchConfetti) window.launchConfetti();
-      }, 1800);
-    });
+    function checkFinaleStatus() {
+      const isUnlocked = window.unlockEngine.isMinuteUnlocked(60);
+      const vaultScreen = document.getElementById('vault-locked-screen');
+      const unlockedContent = document.getElementById('unlocked-content');
+
+      if (isUnlocked) {
+        vaultScreen.style.display = 'none';
+        unlockedContent.style.display = 'block';
+        window.unlockEngine.markVisited(60);
+
+        if (!finaleCelebrated) {
+          finaleCelebrated = true;
+          setTimeout(() => { if (window.launchConfetti) window.launchConfetti(); }, 500);
+          setTimeout(() => { if (window.launchConfetti) window.launchConfetti(); }, 1800);
+          celebrateBirthdayTune();
+        }
+      } else {
+        vaultScreen.style.display = 'block';
+        unlockedContent.style.display = 'none';
+
+        const msLeft = window.unlockEngine.getMsUntilMinute(60);
+        const cd = window.unlockEngine.formatCountdown(msLeft);
+        if (parseInt(cd.days) > 0) {
+          document.getElementById('vault-countdown-text').textContent = `${parseInt(cd.days)}d ${cd.hours}h ${cd.minutes}m ${cd.seconds}s`;
+        } else {
+          document.getElementById('vault-countdown-text').textContent = `${cd.hours}h ${cd.minutes}m ${cd.seconds}s`;
+        }
+      }
+    }
+
+    checkFinaleStatus();
+    setInterval(checkFinaleStatus, 1000);
 
     function celebrateBirthdayTune() {
       if (window.romanticAudio) {
         window.romanticAudio.init();
-        // Play triumphant celebration chime
         const notes = [523.25, 587.33, 659.25, 783.99, 1046.50];
         notes.forEach((freq, i) => {
           window.romanticAudio.playChime(freq, i * 0.15, 2.5);

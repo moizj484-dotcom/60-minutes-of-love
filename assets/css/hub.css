@@ -643,3 +643,52 @@
     grid-column: span 1;
   }
 }
+
+
+/* Solid Vault Placeholder for strictly locked cards (no photo loaded or peeked) */
+.vault-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #fff0f3 0%, #ffe3e8 50%, #ffd4dc 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px dashed var(--rose-gold);
+  position: relative;
+  overflow: hidden;
+}
+
+.vault-padlock {
+  font-size: 34px;
+  animation: padlock-pulse 2.5s infinite ease-in-out;
+  filter: drop-shadow(0 4px 10px rgba(197, 137, 136, 0.35));
+}
+
+@keyframes padlock-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+.vault-time {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--rose-gold-deep);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.vault-cd {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-red);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--rose-gold-light);
+  box-shadow: 0 2px 6px rgba(183, 110, 121, 0.12);
+}
